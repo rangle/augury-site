@@ -1,0 +1,46 @@
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <%- partial("microsite-ui/_partials/nav", {
+      name: 'Augury',
+      logoWithText: 'microsite-ui/images/angular-mast.svg',
+      CTA: {
+        text: 'Install',
+        url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+      },
+      pages: [],
+      homeHref: '/'
+    }) %>
+
+    <main class="mdl-layout__content">
+      <header class="hero-background">
+
+          <!-- Hero -->
+          <%- partial("microsite-ui/_partials/hero", {
+            name: 'Angular Augury',
+            logo: {
+              src: 'images/augury-logo.svg',
+              alt: 'Augury Logo'
+            },
+            tagline: 'A Google Chrome Dev Tools extension for debugging Angular 2 applications.',
+            CTA: {
+              text: 'Install',
+              href: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+            }
+          }) %>
+
+      </header>
+
+      <!-- Add as many features as needed -->
+      <%- partial("_partials/features", {
+        CTA: {
+          text: 'Install',
+          url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+        }
+      }) %>
+
+      <%- partial("_partials/footer", {
+        footerImg: 'microsite-ui/images/angular-logo.svg'
+      }) %>
+    </main>
+  </div>
