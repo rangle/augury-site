@@ -1,0 +1,14 @@
+// NOTE: Copy this file and place it in your microsite's styles folder. `main.scss` will look for and import this file.
+
+/* ==========  CUSTOM THEME COLORS  ========== */
+// Main theme colors
+$primary-color: unquote("rgb(#{$palette-deep-purple-500})"); // This is your primary color theme
+$secondary-color: unquote("rgb(#{$palette-deep-purple-700})"); // This is the darker shade within the same palette
+$primary-light: unquote("rgb(#{$palette-deep-purple-100})"); // This is the lighest shade within the same palette
+$primary-dark: unquote("rgb(#{$palette-deep-purple-900})"); // This is the darkest shade within the same palette
+
+/* ==========  CUSTOM THEME IMAGE  ========== */
+// Main Hero Image
+.hero-image {
+  width: 200px;
+}
