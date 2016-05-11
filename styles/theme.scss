@@ -7,8 +7,43 @@ $secondary-color: unquote("rgb(#{$palette-deep-purple-700})"); // This is the da
 $primary-light: unquote("rgb(#{$palette-deep-purple-100})"); // This is the lighest shade within the same palette
 $primary-dark: unquote("rgb(#{$palette-deep-purple-900})"); // This is the darkest shade within the same palette
 
+$neutral-white: unquote("rgb(#{$color-white})"); // This is a nutral color (white)
+$neutral-black: unquote("rgb(#{$color-black})"); // This is a nutral color (black)
+
 /* ==========  CUSTOM THEME IMAGE  ========== */
 // Main Hero Image
 .hero-image {
-  width: 200px;
+  width: 180px;
+}
+
+//Feature Links
+.features-list a {
+  color: $primary-color;
+}
+
+// Mega Footer
+.mdl-mega-footer {
+  background-color: #263238;
+
+  & h4 {
+    color: $neutral-white;
+    font-size: 24px;
+    text-transform: uppercase;
+    opacity: .87;
+  }
+
+  & ul a {
+    font-weight: 300;
+  }
+}
+
+.mdl-mega-footer .mdl-cell {
+  width: 25%;
+  flex-grow: 1;
+}
+
+// Footer Bottom Section
+.mdl-mega-footer--bottom-section p {
+  text-align: center;
+  padding-bottom: 15px;
 }
