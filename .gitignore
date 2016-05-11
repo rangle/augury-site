@@ -58,4 +58,5 @@ fabric.properties
 
 
 www/
+node_modules/
 microsite-ui/
