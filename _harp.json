@@ -1,0 +1,9 @@
+{
+ "globals": {
+   "name"  : "Augury",
+   "global_cta" : {
+     "href" : "https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd",
+     "text" : "Install"
+   }
+ }
+}
