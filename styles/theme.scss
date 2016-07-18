@@ -12,9 +12,19 @@ $neutral-white: unquote("rgb(#{$color-white})"); // This is a nutral color (whit
 $neutral-black: unquote("rgb(#{$color-black})"); // This is a nutral color (black)
 
 /* ==========  CUSTOM THEME IMAGE  ========== */
+// To display on Safari
+body {
+  height: 100vh;
+}
+
 // Main Hero Image
 .hero-image {
   width: 180px;
+}
+
+.logo-container {
+  overflow: visible;
+  padding-top: 10px;
 }
 
 //Feature Links
@@ -39,8 +49,9 @@ $neutral-black: unquote("rgb(#{$color-black})"); // This is a nutral color (blac
 }
 
 .mdl-mega-footer .mdl-cell {
-  width: 25%;
   flex-grow: 1;
+  min-height: 150px;
+  width: 25%;
 }
 
 // Footer Bottom Section
