@@ -49,7 +49,7 @@ To develop this extension, the following environment is used:
 5. Choose "Load unpacked extension".
 6. In the dialog, open the directory you just cloned.
 
-To try out the extension with an example application, refer to instructions in [README](./example-apps/kitchen-sink-example/README.md).
+To try out the extension with an example application, refer to instructions in [README](https://github.com/rangle/augury/blob/dev/README.md).
 
 ## Running Tests
 
@@ -69,8 +69,8 @@ To execute all unit tests, run `npm test`. It bundles up all files that match `*
 ## Developer Information
 
 - [Developer guide](https://github.com/rangle/augury/wiki)
-- [Contributing guidelines](CONTRIBUTING.md)
-- [Architecture of this extension](./docs/ARCHITECTURE.md)
+- [Contributing guidelines](https://github.com/rangle/augury/blob/dev/CONTRIBUTING.md)
+- [Architecture of this extension](https://github.com/rangle/augury/blob/dev/docs/ARCHITECTURE.md)
 
 ## License
-[MIT](LICENSE)
+[MIT](https://github.com/rangle/augury/blob/dev/README.md)
