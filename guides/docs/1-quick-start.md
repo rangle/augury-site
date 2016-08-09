@@ -7,7 +7,7 @@
 
 Once the extenion is installed you can test it against the demo application https://augury.angular.io/demo/
 
-<!-- ![Screenshot of Augury](../../images/augury-screenloop.gif) -->
+<img src="../../images/augury-screenloop.gif" alt="Screenshot of Augury" style="width: 100%;"/>
 
 ## Supported Version
 
