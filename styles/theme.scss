@@ -68,6 +68,17 @@ body {
   }
 }
 
+.internal-page__content {
+  -ms-flex-positive: 1;
+  -webkit-flex-grow: 1;
+  display: inline-block;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
 // Resources
 
 /* Resource Card Varaibles  */
