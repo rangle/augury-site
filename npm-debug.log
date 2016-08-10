@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/Fatima/.nvm/versions/node/v5.12.0/bin/node',
+1 verbose cli   '/Users/Fatima/.nvm/versions/node/v5.12.0/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'clean-start' ]
+2 info using npm@3.8.6
+3 info using node@v5.12.0
+4 verbose run-script [ 'preclean-start', 'clean-start', 'postclean-start' ]
+5 info lifecycle augury.angular.io@1.0.0~preclean-start: augury.angular.io@1.0.0
+6 silly lifecycle augury.angular.io@1.0.0~preclean-start: no script for preclean-start, continuing
+7 info lifecycle augury.angular.io@1.0.0~clean-start: augury.angular.io@1.0.0
+8 verbose lifecycle augury.angular.io@1.0.0~clean-start: unsafe-perm in lifecycle true
+9 verbose lifecycle augury.angular.io@1.0.0~clean-start: PATH: /Users/Fatima/.nvm/versions/node/v5.12.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Fatima/rangle-projects/augury.angular.io/node_modules/.bin:/Users/Fatima/.nvm/versions/node/v5.12.0/bin:/Users/Fatima/.nvm/versions/node/v5.12.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle augury.angular.io@1.0.0~clean-start: CWD: /Users/Fatima/rangle-projects/augury.angular.io
+11 silly lifecycle augury.angular.io@1.0.0~clean-start: Args: [ '-c', 'rm -rf node_modules; npm start' ]
+12 silly lifecycle augury.angular.io@1.0.0~clean-start: Returned: code: 1  signal: null
+13 info lifecycle augury.angular.io@1.0.0~clean-start: Failed to exec clean-start script
+14 verbose stack Error: augury.angular.io@1.0.0 clean-start: `rm -rf node_modules; npm start`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/Users/Fatima/.nvm/versions/node/v5.12.0/lib/node_modules/npm/lib/utils/lifecycle.js:239:16)
+14 verbose stack     at emitTwo (events.js:100:13)
+14 verbose stack     at EventEmitter.emit (events.js:185:7)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/Fatima/.nvm/versions/node/v5.12.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:100:13)
+14 verbose stack     at ChildProcess.emit (events.js:185:7)
+14 verbose stack     at maybeClose (internal/child_process.js:850:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+15 verbose pkgid augury.angular.io@1.0.0
+16 verbose cwd /Users/Fatima/rangle-projects/augury.angular.io
+17 error Darwin 14.5.0
+18 error argv "/Users/Fatima/.nvm/versions/node/v5.12.0/bin/node" "/Users/Fatima/.nvm/versions/node/v5.12.0/bin/npm" "run" "clean-start"
+19 error node v5.12.0
+20 error npm  v3.8.6
+21 error code ELIFECYCLE
+22 error augury.angular.io@1.0.0 clean-start: `rm -rf node_modules; npm start`
+22 error Exit status 1
+23 error Failed at the augury.angular.io@1.0.0 clean-start script 'rm -rf node_modules; npm start'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the augury.angular.io package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     rm -rf node_modules; npm start
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs augury.angular.io
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls augury.angular.io
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
