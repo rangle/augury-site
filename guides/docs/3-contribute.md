@@ -29,9 +29,9 @@ resources to make sure you're going the right thing. We'll update these from tim
 
 ### The manual
 
-[README](./README.md)
+[README](https://github.com/rangle/augury/blob/dev/README.md)
 
-The first thing you should do is _read_ the [README](./README.md).
+The first thing you should do is _read_ the [README](https://github.com/rangle/augury/blob/dev/README.md).
 We've put a lot of love and care in writing it and it should provide
 you with the context you need for contributing to this project. Really,
 you should read it.
@@ -51,7 +51,7 @@ thing but we can assure you it's a useful one.
 
 [Slack](https://augury-slack.herokuapp.com/)
 
-Okay, [manuals](./README.md) and [textbooks](https://github.com/rangle/augury/wiki) are great
+Okay, [manuals](https://github.com/rangle/augury/blob/dev/README.md) and [textbooks](https://github.com/rangle/augury/wiki) are great
 and all but they make for poor conversation. Feel free to [join us on
 Slack](https://augury-slack.herokuapp.com/)! Whether you're looking
 for answers or just want to hang out and share funny pictures, there's a
@@ -60,10 +60,10 @@ wait to hear from you.
 
 ## Behaving yourself
 
-[Code of Conduct](./CODE_OF_CONDUCT.md)
+[Code of Conduct](https://github.com/rangle/augury/blob/dev/CODE_OF_CONDUCT.md)
 
 In the interest of making the Augury project a safe and friendly
-place for people from diverse backgrounds, we'll be adhering to a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). As a contributor, you'll be expected to
+place for people from diverse backgrounds, we'll be adhering to a [Contributor Code of Conduct](https://github.com/rangle/augury/blob/dev/CODE_OF_CONDUCT.md). As a contributor, you'll be expected to
 uphold this code as well as report unacceptable behaviour to
 [augury@rangle.io](mailto:augury@rangle.io).
 
@@ -77,7 +77,7 @@ We are using GitHub Issues for our public bugs. We will keep track on this and w
 
 If you do find a new issue, the best way to get a bug fixed is to provide a test case with either one of the example apps bundled in the repo, or by making your own Angular 2.0 application illustrating the reduced use case. Don't forget to include the version of Angular 2.0 app you're using!
 
-*At the moment, we offer limited backwards compatibility until Angular 2.0 stabilizes. Please check [README](./README.md#supported-version) for the version Augury currently supports.*
+*At the moment, we offer limited backwards compatibility until Angular 2.0 stabilizes. Please check [README](https://github.com/rangle/augury/blob/dev/README.md#supported-version) for the version Augury currently supports.*
 
 
 ### Pull Requests
@@ -109,4 +109,4 @@ We are using a Slack for all of our communication. If you want to contribute or 
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/rangle/augury/blob/dev/LICENSE)

@@ -69,8 +69,8 @@ To execute all unit tests, run `npm test`. It bundles up all files that match `*
 ## Developer Information
 
 - [Developer guide](https://github.com/rangle/augury/wiki)
-- [Contributing guidelines](https://github.com/rangle/augury/blob/dev/CONTRIBUTING.md)
-- [Architecture of this extension](https://github.com/rangle/augury/blob/dev/docs/ARCHITECTURE.md)
+- [Contributing guidelines](/guides/contribute.html)
+- [Architecture of this extension](/guides/architecture.html)
 
 ## License
 [MIT](https://github.com/rangle/augury/blob/dev/README.md)
