@@ -5,6 +5,14 @@
      "href" : "https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd",
      "text" : "Install"
    },
+   "global_nav_pages": [{
+      "text": "Guides",
+      "href": "/guides/"
+      }, 
+      {
+      "text": "Resources",
+      "href": "/resources"
+    }],
     "resources": [
       {
         "title": "Augury, the New Angular 2 Debugging Tool & the Gov'ts Move to AngularJS",
