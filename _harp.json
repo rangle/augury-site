@@ -8,10 +8,14 @@
    "global_nav_pages": [{
       "text": "Guides",
       "href": "/guides/"
-      }, 
+      },
       {
       "text": "Resources",
       "href": "/resources"
+      },
+      {
+        "text": "Change Log",
+        "href": "https://github.com/rangle/augury/blob/dev/CHANGELOG.md"
     }],
     "resources": [
       {
