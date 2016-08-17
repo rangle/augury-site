@@ -25,7 +25,7 @@
         "description": "This Panel discusses the many aspects of Augury including using Augury in Chrome, favourite Chrome developer techniques, Augury tips, creating informative graphics and much more.",
         "imgUrl": "",
         "resourceExternalUrl": "https://devchat.tv/adv-in-angular/105-aia-augury-with-igor-kamenetsky",
-        "author": "Pannel by Charles Max Wood, Igor Kamenetsky, Joe Eames, Lukas Ruebbelke "
+        "author": "Panel by Charles Max Wood, Igor Kamenetsky, Joe Eames, Lukas Ruebbelke "
       },
       {
         "title": "Debugging Angular 2 Apps with Augury",
