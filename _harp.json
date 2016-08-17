@@ -19,40 +19,22 @@
     }],
     "resources": [
       {
-        "title": "Augury, the New Angular 2 Debugging Tool & the Gov'ts Move to AngularJS",
-        "videoUrl": "https://www.youtube.com/embed/vWsmp59zIBY",
-        "date": "JAN 18, 2016",
-        "description": "In this talk from the AngularJS Toronto Meetup, Yuri Takhyetev and Igor Krivanov announce a new Chrome plug-in, Augury, a tool to help inspect Angular 2 applications and Colin Chan presents a case-study of Ontario.ca’s move to AngularJS and the MEAN Stack.",
-        "imgUrl": "",
-        "resourceExternalUrl": "https://rangle.io/resources/angularjs-toronto-meetup-batarangle-angular2-debugging-tool/",
-        "author": "Talk by Colin Chan, Yuri Takhyetev, Igor Kamenetsky"
-      },
-      {
-        "title": "Mastering Your Angular 2 Workflow with Augury (formerly Batarangle), TypeScript, Webpack and More",
-        "videoUrl": "https://www.youtube.com/embed/NSibZPEtm7o",
-        "imgUrl": "",
-        "date": "FEB 16, 2016",
-        "description": "Rangle's Angular 2.0 team presents a webinar providing a complete overview of how you can master your Angular 2.0 Workflow using key tools.",
-        "resourceExternalUrl": "https://rangle.io/resources/master-your-angular2-workflow-with-batarangle-typescript-webpack-key-tools/",
-        "author": "Webinar by Michael Bennett, Igor Kamenetsky, Rangle's Angular 2.0 team"
-      },
-      {
-        "title": "Look Deeply Into Your App with Augury",
-        "videoUrl": "https://www.youtube.com/embed/b1YV9vJKXEA",
-        "imgUrl": "",
-        "date": "MAY 09, 2016",
-        "description": "In this talk, Igor and Vanessa introduce Angular Augury - a Chrome Developer Tools extension created by the Rangle team that allows developers to visualize their Angular 2 application’s component tree and the data associated with it.",
-        "resourceExternalUrl": "https://rangle.io/resources/look-deeply-into-your-app-with-angular-augury/",
-        "author": "Talk by Igor Kamenetsky and Vanessa Yuen, developers at Rangle"
-      },
-      {
-        "title": "Angular Codegen and Precompile, plus Augury",
+        "title": "Adventures in Angular Episode:105 Augury with Igor Kamenetsky",
         "videoUrl": "",
-        "date": "MAY 24, 2016",
-        "description": "This year's AngularJS Toronto meetup featured Google's Angular core team member, Matias Niemelä. Vanessa Yuen and Sumit Arora from Rangle's own Angular team presented Augury. ",
+        "date": "AUG 11, 2016",
+        "description": "This Panel discusses the many aspects of Augury including using Augury in Chrome, favourite Chrome developer techniques, Augury tips, creating informative graphics and much more.",
         "imgUrl": "",
-        "resourceExternalUrl": "https://rangle.io/resources/angular-codegen-and-precompile-plus-augury/",
-        "author": "Talk by Vanessa Yuen, Sumit Arora, developers at Rangle"
+        "resourceExternalUrl": "https://devchat.tv/adv-in-angular/105-aia-augury-with-igor-kamenetsky",
+        "author": "Pannel by Charles Max Wood, Igor Kamenetsky, Joe Eames, Lukas Ruebbelke "
+      },
+      {
+        "title": "Debugging Angular 2 Apps with Augury",
+        "videoUrl": "",
+        "date": "AUG 02, 2016",
+        "description": "Angular 2 helpful debugging with Augury. Augury is a Google Chrome extension for debugging Angular 2 applications, just like Batarang is for debugging Angular 1.* Apps, and is accessible via the Chrome Dev Tools.",
+        "imgUrl": "",
+        "resourceExternalUrl": "https://scotch.io/tutorials/debugging-angular-2-apps-with-augury",
+        "author": "Blog by Ganga Chris"
       },
       {
         "title": "The Evolution of Augury, for Angular 2 Applications",
@@ -64,13 +46,40 @@
         "author": "Blog by Amrita Chopra"
       },
       {
-        "title": "Debugging Angular 2 Apps with Augury",
+        "title": "Angular Codegen and Precompile, plus Augury",
         "videoUrl": "",
-        "date": "AUG 02, 2016",
-        "description": "Angular 2 helpful debugging with Augury. Augury is a Google Chrome extension for debugging Angular 2 applications, just like Batarang is for debugging Angular 1.* Apps, and is accessible via the Chrome Dev Tools.",
+        "date": "MAY 24, 2016",
+        "description": "This year's AngularJS Toronto meetup featured Google's Angular core team member, Matias Niemelä. Vanessa Yuen and Sumit Arora from Rangle's own Angular team presented Augury. ",
         "imgUrl": "",
-        "resourceExternalUrl": "https://scotch.io/tutorials/debugging-angular-2-apps-with-augury",
-        "author": "Blog by Ganga Chris"
+        "resourceExternalUrl": "https://rangle.io/resources/angular-codegen-and-precompile-plus-augury/",
+        "author": "Talk by Vanessa Yuen, Sumit Arora, developers at Rangle"
+      },
+      {
+        "title": "Look Deeply Into Your App with Augury",
+        "videoUrl": "https://www.youtube.com/embed/b1YV9vJKXEA",
+        "imgUrl": "",
+        "date": "MAY 09, 2016",
+        "description": "In this talk, Igor and Vanessa introduce Angular Augury - a Chrome Developer Tools extension created by the Rangle team that allows developers to visualize their Angular 2 application’s component tree and the data associated with it.",
+        "resourceExternalUrl": "https://rangle.io/resources/look-deeply-into-your-app-with-angular-augury/",
+        "author": "Talk by Igor Kamenetsky and Vanessa Yuen, developers at Rangle"
+      },
+      {
+        "title": "Mastering Your Angular 2 Workflow with Augury (formerly Batarangle), TypeScript, Webpack and More",
+        "videoUrl": "https://www.youtube.com/embed/NSibZPEtm7o",
+        "imgUrl": "",
+        "date": "FEB 16, 2016",
+        "description": "Rangle's Angular 2.0 team presents a webinar providing a complete overview of how you can master your Angular 2.0 Workflow using key tools.",
+        "resourceExternalUrl": "https://rangle.io/resources/master-your-angular2-workflow-with-batarangle-typescript-webpack-key-tools/",
+        "author": "Webinar by Michael Bennett, Igor Kamenetsky, Rangle's Angular 2.0 team"
+      },
+      {
+        "title": "Augury, the New Angular 2 Debugging Tool & the Gov'ts Move to AngularJS",
+        "videoUrl": "https://www.youtube.com/embed/vWsmp59zIBY",
+        "date": "JAN 18, 2016",
+        "description": "In this talk from the AngularJS Toronto Meetup, Yuri Takhyetev and Igor Krivanov announce a new Chrome plug-in, Augury, a tool to help inspect Angular 2 applications and Colin Chan presents a case-study of Ontario.ca’s move to AngularJS and the MEAN Stack.",
+        "imgUrl": "",
+        "resourceExternalUrl": "https://rangle.io/resources/angularjs-toronto-meetup-batarangle-angular2-debugging-tool/",
+        "author": "Talk by Colin Chan, Yuri Takhyetev, Igor Kamenetsky"
       }
     ]
   }
