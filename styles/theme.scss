@@ -105,7 +105,6 @@ $card-title-font-size: 20px;
   .resource-card {
     background: $card-background-color;
     border-radius: 4px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
     min-height: $card-height;
     padding:$card-padding;
     position: relative;
@@ -131,10 +130,6 @@ $card-title-font-size: 20px;
     & .author {
       color: $author-color;
       margin-bottom: $text-margin-bottom;
-    }
-
-    &:hover {
-      box-shadow: 0 2px 20px 0 rgba(0,0,0,0.26);
     }
   }
 }
