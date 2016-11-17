@@ -17,8 +17,15 @@
     "url": "https://github.com/rangle/augury.angular.io/issues"
   },
   "homepage": "https://github.com/rangle/augury.angular.io#readme",
+  "scripts": {
+    "start": "harp server",
+    "compile": "harp compile"
+  },
   "dependencies": {
     "material-design-lite": "^1.1.3",
     "microsite-ui": "git://github.com/angular/design-love.git#feat-global-nav-ref"
+  },
+  "devDependencies": {
+    "harp": "^0.22.0"
   }
 }

@@ -8,17 +8,17 @@ This will include `microsite-ui` a library with ejs partials which can be used t
 
 # Development
 ```
-> npm install -g harp
+> npm install
 
 ```
 
 ```
-> harp server # Will host a local dev server
+> npm start
 ```
 
 # Production
 
 ```
-> harp compile # Will output a www/ folder
+> npm run compile # Will output a www/ folder
 > firebase deploy # Will go live
 ```
