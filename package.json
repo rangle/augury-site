@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install; cd node_modules/microsite-ui; npm install; cd ../../; harp server",
-    "clean-start": "rm -rf node_modules; npm start"
+    "custom-install": "npm install -g harp@0.22.0 && npm install",
+    "start": "harp server",
+    "compile": "harp compile",
+    "uninstall": "npm uninstall harp -g"
   },
   "repository": {
     "type": "git",
@@ -17,15 +19,8 @@
     "url": "https://github.com/rangle/augury.angular.io/issues"
   },
   "homepage": "https://github.com/rangle/augury.angular.io#readme",
-  "scripts": {
-    "start": "harp server",
-    "compile": "harp compile"
-  },
   "dependencies": {
     "material-design-lite": "^1.1.3",
     "microsite-ui": "git://github.com/angular/design-love.git#feat-global-nav-ref"
-  },
-  "devDependencies": {
-    "harp": "^0.22.0"
   }
 }
