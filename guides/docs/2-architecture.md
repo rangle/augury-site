@@ -492,4 +492,4 @@ understanding the Augury UI code in the `frontend` directory.
 * [Content Scripts](https://developer.chrome.com/extensions/content_scripts)
 
 # Updated Architecture Diagram
-TBD
+<img src="https://github.com/rangle/augury/raw/master/docs/augury-flow.png" alt="Augury Architecture Diagram" style="width: 100%;"/>
