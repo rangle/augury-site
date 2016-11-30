@@ -1,24 +1,21 @@
-# Dependencies
-Run this command at the root of the project directory
+# Prerequisites
 ```
-git clone https://github.com/ericjim/microsite-ui
+- Node 6
 ```
-This will include `microsite-ui` a library with ejs partials which can be used to compose a microsite.
-
 
 # Development
 ```
-> npm install -g harp
+> npm install
 
 ```
 
 ```
-> harp server # Will host a local dev server
+> npm start
 ```
 
 # Production
 
 ```
-> harp compile # Will output a www/ folder
+> npm run compile # Will output a www/ folder
 > firebase deploy # Will go live
 ```

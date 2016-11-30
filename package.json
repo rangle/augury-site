@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install; cd node_modules/microsite-ui; npm install; cd ../../; harp server",
-    "clean-start": "rm -rf node_modules; npm start"
+    "custom-install": "npm install -g harp@0.22.0 && npm install",
+    "start": "harp server",
+    "compile": "harp compile",
+    "uninstall": "npm uninstall harp -g"
   },
   "repository": {
     "type": "git",
