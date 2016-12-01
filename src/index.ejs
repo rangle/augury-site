@@ -1,9 +1,8 @@
-
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-    <%- partial("node_modules/microsite-ui/_partials/nav", {
+    <%- partial("pages/_partials/nav", {
       name: 'Augury',
-      logoWithText: 'node_modules/microsite-ui/images/angular-logo-with-text.svg',
+      logoWithText: 'images/angular-logo-with-text.svg',
       CTA: {
         text: 'Install',
         url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
@@ -16,7 +15,7 @@
       <header class="hero-background">
 
           <!-- Hero -->
-          <%- partial("node_modules/microsite-ui/_partials/hero", {
+          <%- partial("pages/_partials/hero", {
             name: 'Angular Augury',
             logo: {
               src: 'images/augury-logo.svg',
@@ -32,15 +31,15 @@
       </header>
 
       <!-- Add as many features as needed -->
-      <%- partial("_partials/features", {
+      <%- partial("pages/_partials/features", {
         CTA: {
           text: 'Install',
           url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
         }
       }) %>
 
-      <%- partial("_partials/footer", {
-        footerImg: 'node_modules/microsite-ui/images/angular-logo.svg'
+      <%- partial("pages/_partials/footer", {
+        footerImg: 'images/angular-logo.svg'
       }) %>
     </main>
   </div>
