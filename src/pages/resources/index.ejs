@@ -1,0 +1,44 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <%- partial("../_partials/nav", {
+        name: 'Augury',
+        logoWithText: '../../images/angular-logo-with-text.svg',
+        CTA: {
+            text: 'Install',
+            url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+        },
+        pages: global_nav_pages,
+        homeHref: '/'
+    }) %>
+
+    <main class="internal-page__content">
+        <header class="hero-background">
+            <header class="hero-background">
+                <section class="internal-header mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell">
+                        <h4 class="uppercase">&nbsp;Resources</h4>
+                    </div>
+                </section>
+            </header>
+        </header>
+
+        <section class="resources features-container section--center mdl-grid">
+            <% for(var i = 0; i < resources.length; i++) {%>
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet">
+                <a href="<%- resources[i].resourceExternalUrl %>">
+                    <div class="resource-card">
+                        <h5 class="date"><%- resources[i].date %></h5>
+                        <h4 class="title"> <%- resources[i].title %></h4>
+                        <p class="description"><%- resources[i].description %></p>
+                        <p class="author"> <%- resources[i].author %></p>
+                    </div>
+                </a>
+            </div>
+            <% } %>
+        </section>
+
+        <%- partial("../_partials/footer", {
+            footerImg: '../../images/angular-logo.svg'
+        }) %>
+    </main>
+</div>

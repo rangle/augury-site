@@ -376,4 +376,7 @@ h5 {
       width: calc(100% - 16px);
     }
   }
-@import "../material-design-lite/material.min.css";
+
+.mdl-grid--no-spacing>.mdl-cell {
+  width: auto;
+}

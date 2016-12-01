@@ -5,14 +5,13 @@
      "href" : "https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd",
      "text" : "Install"
    },
-   "features": [],
    "global_nav_pages": [{
       "text": "Guides",
-      "href": "/guides/"
+      "href": "/pages/guides/"
       },
       {
       "text": "Resources",
-      "href": "/resources"
+      "href": "/pages/resources/"
       },
       {
         "text": "Change Log",
