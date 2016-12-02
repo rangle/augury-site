@@ -12,6 +12,7 @@ const files = {
     'src/vendors/material-design-lite/material.min.js': 'www/vendors/material-design-lite',
     'src/vendors/material-design-lite/material.min.css': 'www/vendors/material-design-lite',
     'src/images/**/*': 'www/images',
+    'src/pages/docs/img/*': 'www/pages/docs/img',
     'src/demo/*': 'www/demo'
 };
 
