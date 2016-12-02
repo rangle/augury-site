@@ -6,7 +6,6 @@ $body-padding-mobile: 24px;
 $body-font-color: #37474F;
 $font-opacity: 0.87;
 
-
 // MAIN STYLES
 
 body {
@@ -19,7 +18,7 @@ body {
     left: 0;
     position: fixed;
     right: 0;
-    top:0;
+    top: 0;
     z-index: 2;
   }
 
@@ -54,7 +53,7 @@ body {
   margin-bottom: $markdown-margin;
 
   @media(max-width: 1024px) {
-    margin-top:   $markdown-margin-mobile;
+    margin-top: $markdown-margin-mobile;
     padding-left: $body-padding-mobile;
     padding-right: $body-padding-mobile;
   }
@@ -120,7 +119,7 @@ $darwer-title-background: #ECEFF1;
 $selected-background: #E0E0E0;
 
 .mdl-layout__drawer {
-  & >.mdl-layout-title {
+  & > .mdl-layout-title {
     background-color: $darwer-title-background;
     font-weight: 500;
     opacity: $font-opacity;
@@ -134,6 +133,10 @@ $selected-background: #E0E0E0;
   & .mdl-navigation__link {
     font-size: 14px;
   }
+}
+
+.mdl-layout--fixed-drawer > .mdl-layout__content {
+  margin-left: 240px !important;
 }
 
 .selected {
