@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "augury-staging",
+    "staging": "augury-staging",
+    "production": "augury-angular-io"
+  }
+}
