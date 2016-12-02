@@ -1,0 +1,134 @@
+@import "../vendors/material-design-lite/src/variables";
+
+/* ==========  CUSTOM THEME COLORS  ========== */
+// Main theme colors
+$primary-color: unquote("rgb(#{$palette-deep-purple-500})"); // This is your primary color theme
+$secondary-color: unquote("rgb(#{$palette-deep-purple-700})"); // This is the darker shade within the same palette
+$primary-light: unquote("rgb(#{$palette-deep-purple-100})"); // This is the lighest shade within the same palette
+$primary-dark: unquote("rgb(#{$palette-deep-purple-900})"); // This is the darkest shade within the same palette
+
+$neutral-white: unquote("rgb(#{$color-white})"); // This is a nutral color (white)
+$neutral-black: unquote("rgb(#{$color-black})"); // This is a nutral color (black)
+
+/* ==========  CUSTOM THEME IMAGE  ========== */
+// To display on Safari
+body {
+  height: 100vh;
+}
+
+// Main Hero Image
+.hero-image {
+  width: 180px;
+}
+
+.logo-container {
+  overflow: visible;
+  padding-top: 10px;
+}
+
+//Feature Links
+.features-list a {
+  color: $primary-color;
+}
+
+// Mega Footer
+.mdl-mega-footer {
+  background-color: #263238;
+
+  & h4 {
+    color: $neutral-white;
+    font-size: 24px;
+    text-transform: uppercase;
+    opacity: .87;
+  }
+
+  & ul a {
+    font-weight: 300;
+  }
+}
+
+.mdl-mega-footer .mdl-cell {
+  flex-grow: 1;
+  min-height: 150px;
+  width: 25%;
+}
+
+// Footer Bottom Section
+.mdl-mega-footer--bottom-section p {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+/* ==========  INTERNAL PAGE  ========== */
+.internal-header {
+  & h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+}
+
+.internal-page__content {
+  -ms-flex-positive: 1;
+  -webkit-flex-grow: 1;
+  display: inline-block;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+// Resources
+
+/* Resource Card Varaibles  */
+$card-background-color:#f5f6f7;
+$card-height: 300px;
+$card-padding: 16px;
+$card-font-size: 16px;
+
+$date-color: #51636b;
+$description-color: #51636b;
+$author-color: #7a8b94;
+$text-margin-bottom: 20px;
+$card-title-font-size: 20px;
+
+.resources {
+  font-size: $card-font-size;
+  margin-bottom: $text-margin-bottom*2;
+
+  & a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  .resource-card {
+    background: $card-background-color;
+    border-radius: 4px;
+    min-height: $card-height;
+    padding:$card-padding;
+    position: relative;
+
+    & .date {
+      color: $date-color;
+      margin-bottom: $text-margin-bottom;
+      text-transform: uppercase;
+    }
+
+    & .title {
+      color: $primary-color;
+      font-size: $card-title-font-size;
+      line-height: 30px;
+      margin-bottom: $text-margin-bottom;
+    }
+
+    & .description {
+      color: $description-color;
+      margin-bottom: $text-margin-bottom;
+    }
+
+    & .author {
+      color: $author-color;
+      margin-bottom: $text-margin-bottom;
+    }
+  }
+}

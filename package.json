@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "custom-install": "npm install -g harp@0.22.0 && npm install",
-    "start": "harp server",
-    "compile": "harp compile",
-    "uninstall": "npm uninstall harp -g"
+    "custom-install": "cd src && mkdir -p vendors && cd vendors && git clone --branch v1.2.1 git@github.com:google/material-design-lite.git",
+    "start": "harp server src",
+    "serve-prod": "http-server www/",
+    "compile": "harp compile ./src www && node utils/dependencies.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,11 @@
     "url": "https://github.com/rangle/augury.angular.io/issues"
   },
   "homepage": "https://github.com/rangle/augury.angular.io#readme",
-  "dependencies": {
-    "material-design-lite": "^1.1.3",
-    "microsite-ui": "git://github.com/angular/design-love.git#feat-global-nav-ref"
+  "dependencies": {},
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "cpx": "^1.5.0",
+    "harp": "0.23.0",
+    "http-server": "^0.9.0"
   }
 }
