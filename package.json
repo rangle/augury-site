@@ -6,7 +6,7 @@
   "scripts": {
     "custom-install": "cd src && git clone --branch v1.2.1 git@github.com:google/material-design-lite.git",
     "start": "harp server src",
-    "serve-prod": "node server.js",
+    "serve-prod": "http-server www/",
     "compile": "harp compile ./src www && node utils/dependencies.js"
   },
   "repository": {
@@ -19,11 +19,10 @@
     "url": "https://github.com/rangle/augury.angular.io/issues"
   },
   "homepage": "https://github.com/rangle/augury.angular.io#readme",
-  "dependencies": {
-    "express": "^4.14.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "cpx": "^1.5.0",
-    "harp": "0.23.0"
+    "harp": "0.23.0",
+    "http-server": "^0.9.0"
   }
 }
