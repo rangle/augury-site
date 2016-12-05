@@ -12,29 +12,6 @@ body {
   color: $body-font-color;
 }
 
-// HERO
-.hero-background {
-  @media (max-width: 800px) {
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 2;
-  }
-
-  h4 {
-    font-weight: 300;
-    margin: 40px 0;
-    padding-left: $body-padding-desktop;
-
-    @media(max-width: 1024px) {
-      font-size: 20px;
-      margin: 10px 0 10px 30px;
-      padding-left: $body-padding-mobile;
-    }
-  }
-}
-
 // MARKDOWN CONTENT
 .markdown-doc {
   $markdown-padding: 200px;
