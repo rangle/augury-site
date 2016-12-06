@@ -10,7 +10,7 @@
 
 ```
 This will install material-design-lite into your source folder, this dependency is needed to create a clean build.
-Managing it from the node_modules folder is not possible, since harp does not parse that folder. 
+Managing it from the node_modules folder is not possible, since harp does not parse that folder.
 
 ```
 > npm start
@@ -30,5 +30,5 @@ Managing it from the node_modules folder is not possible, since harp does not pa
     - All PR's will be verified and tested on staging once accepted.
 - Master releases are done if staging changes are accepted by Augury team members
 - All releases will be versioned.
-    
-  
+
+
