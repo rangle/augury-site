@@ -3,7 +3,7 @@ machine:
     version: 6.0.0
 dependencies:
   pre:
-    - rm -rf node_modules vendors/material-design-lite
+    - rm -rf vendors/material-design-lite
   post:
     - npm run custom-install
     - npm run compile
