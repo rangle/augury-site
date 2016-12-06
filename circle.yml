@@ -7,4 +7,10 @@ dependencies:
   post:
     - npm run custom-install
     - npm run compile
-    - npm run deploy:staging
+deployment:
+  staging:
+    branch: staging
+      - npm run deploy:staging
+  production:
+    branch: master
+      - npm run deploy:production
