@@ -10,7 +10,9 @@ dependencies:
 deployment:
   staging:
     branch: staging
+    commands:
       - npm run deploy:staging
   production:
     branch: master
+    commands:
       - npm run deploy:production
