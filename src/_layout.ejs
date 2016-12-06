@@ -26,5 +26,27 @@
     ga('create', 'UA-8594346-15', 'auto');
     ga('send', 'pageview');
 </script>
+<script>
+    var trackOutboundLinkNav = function(url) {
+      ga('send', 'event', 'acquisition', 'install', 'nav', {
+        'transport': 'beacon',
+        'hitCallback': function(){document.location = url;}
+      });
+    }
+
+    var trackOutboundLinkHero = function(url) {
+      ga('send', 'event', 'acquisition', 'install', 'hero', {
+        'transport': 'beacon',
+        'hitCallback': function(){document.location = url;}
+      });
+    }
+
+    var trackOutboundLinkCta = function(url) {
+      ga('send', 'event', 'acquisition', 'install', 'cta', {
+        'transport': 'beacon',
+        'hitCallback': function(){document.location = url;}
+      });
+    }
+</script>
 </body>
 </html>

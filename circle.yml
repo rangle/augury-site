@@ -1,13 +1,28 @@
 machine:
   node:
     version: 6.0.0
+<<<<<<< HEAD
   post:
     - npm install -g npm@3.x.x
 
+=======
+>>>>>>> 0ff95b826b677470b4cd3f1ea5ce5b7d76923559
 dependencies:
   pre:
     - rm -rf node_modules vendors/material-design-lite
   post:
     - npm run custom-install
     - npm run compile
+<<<<<<< HEAD
     - npm run deploy:staging
+=======
+deployment:
+  staging:
+    branch: staging
+    commands:
+      - npm run deploy:staging
+  production:
+    branch: master
+    commands:
+      - npm run deploy:production
+>>>>>>> 0ff95b826b677470b4cd3f1ea5ce5b7d76923559
