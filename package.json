@@ -9,7 +9,8 @@
     "deploy:staging": "firebase deploy --project staging --token $FIREBASE_STAGING_TOKEN",
     "deploy:production": "firebase deploy --project production--token $FIREBASE_PRODUCTION_TOKEN",
     "serve-prod": "http-server www/",
-    "compile": "harp compile ./src www && node utils/dependencies.js"
+    "compile": "harp compile ./src www && node utils/dependencies.js",
+    "test": "echo true"
   },
   "repository": {
     "type": "git",
