@@ -4,8 +4,6 @@ machine:
   post:
     - npm install -g npm@3.x.x
 dependencies:
-  pre:
-    - rm -rf node_modules vendors/material-design-lite
   post:
     - npm run custom-install
     - npm run compile
