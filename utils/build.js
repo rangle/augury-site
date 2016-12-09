@@ -10,10 +10,9 @@ ncp.limit = 20;
 
 module.exports = function build(dependency) {
   const ignoredFiles = dependency.ignore.map((i) => path.join(dependency.destination, i)),
-    existingFiles = [path.join(TMP_FOLDER, dependency.name)],
-    isValidDependency = validate(dependency);
+    existingFiles = [path.join(TMP_FOLDER, dependency.name)];
   
-  if (isValidDependency) {
+  if (!dependency) {
     return chain(
       cleanFiles(existingFiles),
       cloneRepo,
@@ -25,7 +24,12 @@ module.exports = function build(dependency) {
   }
 };
 
-// chains promises together and passes the dependency along the pipeline
+/*
+ * This method is a promise wrapper to chain promises
+ * it takes in the promises it has to process and returns
+ * a function that takes in the dependency that should be
+ * passed along the chain.
+ */
 function chain(...promises) {
   if (promises.length === 0) {
     return () => { };
@@ -38,20 +42,17 @@ function chain(...promises) {
   }
 }
 
-function validate(dependency) {
-  if (!dependency) {
-    return false;
-  }
-  return true;
-}
-
+/*
+ * This method spawns a child process that executes
+ * the cloning of the dependency repository
+ */
 function cloneRepo(dependency) {
   const {name, repository, branch} = dependency;
   return new Promise((resolve, reject) => {
     const child = spawn('git', ['clone', '-b', branch, repository, `${TMP_FOLDER}/${name}`], { stdio: 'inherit' });
 
     child.on('error', (err) => {
-      reject('Clone error - ', err);
+      reject(err);
     });
 
     child.on('close', () => {
@@ -60,6 +61,10 @@ function cloneRepo(dependency) {
   });
 }
 
+/*
+ * This method spawns a child process that executes
+ * the moving of the dependency files
+ */
 function moveFiles(path) {
   return (dependency) => {
     const {name, destination} = dependency;
