@@ -2,7 +2,9 @@ const fs = require('fs'),
   ncp = require('ncp').ncp,
   path = require('path'),
   rimraf = require('rimraf'),
+  glob = require('glob'),
   spawn = require('cross-spawn'),
+  lodash = require('lodash'),
   chalk = require('chalk');
 
 const TMP_FOLDER = path.join(__dirname, '..', '.tmp');
@@ -11,13 +13,13 @@ ncp.limit = 20;
 module.exports = function build(dependency) {
   const ignoredFiles = dependency.ignore.map((i) => path.join(dependency.destination, i)),
     existingFiles = [path.join(TMP_FOLDER, dependency.name)];
-  
-  if (!dependency) {
+
+  if (!!dependency) {
     return chain(
       cleanFiles(existingFiles),
       cloneRepo,
       moveFiles(path.join(TMP_FOLDER, dependency.name)),
-      cleanFiles(ignoredFiles)
+      cleanFiles(ignoredFiles, {glob: true})
     )(dependency);
   } else {
     return handleError('No dependency found');
@@ -32,7 +34,8 @@ module.exports = function build(dependency) {
  */
 function chain(...promises) {
   if (promises.length === 0) {
-    return () => { };
+    return () => {
+    };
   }
   const currentPromise = promises.shift();
   return (dependency) => {
@@ -49,7 +52,7 @@ function chain(...promises) {
 function cloneRepo(dependency) {
   const {name, repository, branch} = dependency;
   return new Promise((resolve, reject) => {
-    const child = spawn('git', ['clone', '-b', branch, repository, `${TMP_FOLDER}/${name}`], { stdio: 'inherit' });
+    const child = spawn('git', ['clone', '-b', branch, repository, `${TMP_FOLDER}/${name}`], {stdio: 'inherit'});
 
     child.on('error', (err) => {
       reject(err);
@@ -65,12 +68,12 @@ function cloneRepo(dependency) {
  * This method spawns a child process that executes
  * the moving of the dependency files
  */
-function moveFiles(path) {
+function moveFiles(filePath) {
   return (dependency) => {
     const {name, destination} = dependency;
-    console.log('Copying files for dependency ' + name)
+    console.log('Copying files for dependency ' + name);
     return new Promise((resolve, reject) => {
-      ncp(path, destination, { clobber: true }, function (err) {
+      ncp(filePath, destination, {clobber: true}, function (err) {
         if (err) {
           return reject(err);
         }
@@ -80,11 +83,21 @@ function moveFiles(path) {
   }
 }
 
-function cleanFiles(files) {
+function cleanFiles(files, options) {
   return (dependency) => {
     const {name} = dependency;
-
     console.log(chalk.green('Cleaning up ' + name));
+    console.log(files)
+
+    if (options && options.glob) {
+      const promises = files.map(globFile);
+      return Promise.all(promises).then((results) => {
+        let paths = lodash.flattenDeep(results);
+        return Promise.all(
+          paths.map(cleanFile)
+        );
+      });
+    }
 
     return Promise.all(files.map(cleanFile));
 
@@ -94,13 +107,24 @@ function cleanFiles(files) {
           if (!exists) {
             resolve(dependency);
           } else {
-            rimraf(file, (err) => {
+            rimraf(file, err => {
               if (err) {
                 reject(err);
               }
               resolve(dependency);
             });
           }
+        });
+      });
+    }
+
+    function globFile(file) {
+      return new Promise((resolve, reject) => {
+        return glob(file, {}, function (err, results) {
+          if (err) {
+            reject(err);
+          }
+          resolve(results);
         });
       });
     }

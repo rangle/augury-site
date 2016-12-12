@@ -9,7 +9,17 @@ const dependencies = [
     branch: 'master',
     ignore: [
       'LICENSE',
-      'README.md'
+      'README.md',
+      '/**/src/',
+      '/**/source/',
+      '/**/.gitignore',
+      '/**/.editorconfig',
+      '/**/package.json',
+      '/**/README.md',
+      '/**/angular-cli.json',
+      '/**/tsconfig.json',
+      '/**/webpack.config.js',
+      '/**/tslint.json'
     ]
   }
 ];
