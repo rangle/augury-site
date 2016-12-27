@@ -19,8 +19,15 @@ const dependencies = [
       '/**/angular-cli.json',
       '/**/tsconfig.json',
       '/**/webpack.config.js',
-      '/**/tslint.json'
-    ]
+      '/**/tslint.json',
+      'www/demo'
+    ],
+    move: {
+      demo: {
+        path: 'www/examples/kitchen-sink-demo/app',
+        destination: 'www/demo'
+      }
+    }
   }
 ];
 
