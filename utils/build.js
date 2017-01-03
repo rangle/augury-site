@@ -15,16 +15,34 @@ module.exports = function build(dependency) {
     existingFiles = [path.join(TMP_FOLDER, dependency.name)];
 
   if (!!dependency) {
-    return chain(
+    chain(
       cleanFiles(existingFiles),
       cloneRepo,
       moveFiles(path.join(TMP_FOLDER, dependency.name)),
-      cleanFiles(ignoredFiles, {glob: true})
+      cleanFiles(ignoredFiles, { glob: true }),
+      moveCustom
     )(dependency);
   } else {
     return handleError('No dependency found');
   }
 };
+
+
+/*
+* Temporary custom move method
+*/
+const moveCustom = (dependency) => {
+  if (dependency.hasOwnProperty('move')) {
+    // after chain
+    const obj = dependency.move;
+    const promises = Object.keys(dependency.move).map(key => moveFiles(obj[key].path)(obj[key]));
+
+    return Promise.all(promises).then((results) => {
+      console.log(chalk.green('moved files'));
+    })
+      .catch(handleError)
+  }
+}
 
 /*
  * This method is a promise wrapper to chain promises
@@ -52,7 +70,7 @@ function chain(...promises) {
 function cloneRepo(dependency) {
   const {name, repository, branch} = dependency;
   return new Promise((resolve, reject) => {
-    const child = spawn('git', ['clone', '-b', branch, repository, `${TMP_FOLDER}/${name}`], {stdio: 'inherit'});
+    const child = spawn('git', ['clone', '-b', branch, repository, `${TMP_FOLDER}/${name}`], { stdio: 'inherit' });
 
     child.on('error', (err) => {
       reject(err);
@@ -73,7 +91,7 @@ function moveFiles(filePath) {
     const {name, destination} = dependency;
     console.log('Copying files for dependency ' + name);
     return new Promise((resolve, reject) => {
-      ncp(filePath, destination, {clobber: true}, function (err) {
+      ncp(filePath, destination, { clobber: true }, function (err) {
         if (err) {
           return reject(err);
         }
