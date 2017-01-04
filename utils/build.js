@@ -32,7 +32,6 @@ module.exports = function build(dependency) {
  */
 const moveCustom = (dependency) => {
   if (dependency.hasOwnProperty('move')) {
-    console.log('@@@ moveCustom called')
     // after chain
     const obj = dependency.move;
     const promises = Object.keys(dependency.move).map(key => copyFiles(obj[key].path)(obj[key]));
