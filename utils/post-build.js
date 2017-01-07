@@ -1,5 +1,6 @@
-const build = require('./build'),
-  path = require('path');
+const build = require('./build');
+const fileCopy = require('./file-copy');
+const path = require('path');
 
 const dependencies = [
   {
@@ -21,14 +22,17 @@ const dependencies = [
       '/**/webpack.config.js',
       '/**/tslint.json',
       'www/demo'
-    ],
-    move: {
-      demo: {
-        path: 'www/examples/kitchen-sink-demo/app',
-        destination: 'www/demo'
-      }
-    }
+    ]
   }
 ];
 
 dependencies.forEach(build);
+
+const files = {
+  'www/examples/kitchen-sink-demo/app': 'www/demo',
+  'src/pages/docs/guide/augury/images/**': 'www/pages/guides/images',
+  'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images'
+};
+
+fileCopy(files);
+

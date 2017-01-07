@@ -19,29 +19,12 @@ module.exports = function build(dependency) {
       deleteFiles(existingFiles),
       cloneRepo,
       copyFiles(path.join(TMP_FOLDER, dependency.name)),
-      deleteFiles(ignoredFiles, { glob: true }),
-      moveCustom
+      deleteFiles(ignoredFiles, { glob: true })
     )(dependency);
   } else {
     return handleError('No dependency found');
   }
 };
-
-/*
- * Temporary custom move method
- */
-const moveCustom = (dependency) => {
-  if (dependency.hasOwnProperty('move')) {
-    // after chain
-    const obj = dependency.move;
-    const promises = Object.keys(dependency.move).map(key => copyFiles(obj[key].path)(obj[key]));
-
-    return Promise.all(promises).then(results => {
-      console.log(chalk.green('moved files'));
-    })
-    .catch(handleError)
-  }
-}
 
 /*
  * This method is a promise wrapper to chain promises
