@@ -72,7 +72,8 @@ function cloneRepo(dependency) {
 
     child.on('close', () => {
       resolve(dependency);
-    })
+    });
+
   });
 }
 
@@ -151,4 +152,3 @@ function deleteFiles(files, options) {
 function handleError(err) {
   console.log(chalk.red(err));
 }
-

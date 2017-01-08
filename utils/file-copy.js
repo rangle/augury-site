@@ -1,17 +1,17 @@
 const chalk = require('chalk');
 const cpx = require('cpx');
 
-function fileCopy(files) {
+function folderCopy(folders) {
 
-  for (file in files) {
+  for (folder in folders) {
 
-    const dest = files[file];
-    const s1 = chalk.green.bold(file);
+    const dest = folders[folder];
+    const s1 = chalk.green.bold(folder);
     const s2 = chalk.green.bold(dest);
 
     console.log(chalk.blue.bold(`Copying ${s1} to ${s2}`));
 
-    cpx.copy(file, dest, {}, err => {
+    cpx.copy(folder, dest, {}, err => {
       if (err) {
         throw err;
       }
@@ -21,5 +21,4 @@ function fileCopy(files) {
 
 }
 
-module.exports = fileCopy;
-
+module.exports = folderCopy;

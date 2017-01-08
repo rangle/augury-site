@@ -1,5 +1,5 @@
 const build = require('./build');
-const fileCopy = require('./file-copy');
+const folderCopy = require('./file-copy');
 const path = require('path');
 
 const dependencies = [
@@ -28,11 +28,8 @@ const dependencies = [
 
 dependencies.forEach(build);
 
-const files = {
+folderCopy({
   'www/examples/kitchen-sink-demo/app': 'www/demo',
   'src/pages/docs/guide/augury/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images'
-};
-
-fileCopy(files);
-
+});
