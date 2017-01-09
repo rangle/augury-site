@@ -1,5 +1,5 @@
-const build = require('./build'),
-  path = require('path');
+const build = require('./build');
+const path = require('path');
 
 const dependencies = [
   {
@@ -15,3 +15,4 @@ const dependencies = [
 ];
 
 dependencies.forEach(build);
+
