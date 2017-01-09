@@ -15,3 +15,4 @@ const dependencies = [
 ];
 
 dependencies.forEach(build);
+
