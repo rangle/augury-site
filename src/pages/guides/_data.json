@@ -1,9 +1,9 @@
 {
   "guides": [
-    "1-augury",
-    "2-io-demo",
-    "3-simple-form-demo",
-    "4-architecture",
-    "5-contribute"
+    "1-augury.html",
+    "2-io-demo.html",
+    "3-simple-form-demo.html",
+    "4-architecture.html",
+    "5-contribute.html"
   ]
 }
