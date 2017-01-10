@@ -31,5 +31,7 @@ dependencies.forEach(build);
 folderCopy({
   'www/examples/kitchen-sink-demo/app': 'www/demo',
   'src/pages/docs/guide/augury/images/**': 'www/pages/guides/images',
-  'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images'
+  'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images',
+  'src/pages/docs/guide/form-new-user/images/**': 'www/pages/guides/images',
+  'src/pages/docs/guide/input-output-app/images/**': 'www/pages/guides/images',
 });
