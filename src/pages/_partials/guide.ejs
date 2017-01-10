@@ -1,18 +1,7 @@
 <%
 // docs :: [String]
 
-// Todo: Rajinder this will need to be changed after the Augury talk we need something
-//       working right now, the folder layout has changed and I will need to sit down
-//       with Eric to understand the exist code.
-// var docs = public.pages.docs._contents
-
-var docs = [
-    '1-augury',
-    '2-io-demo',
-    '3-simple-form-demo',
-    '4-architecture',
-    '5-contribute'
-];
+var docs = public.pages.guides._data.guides;
 
 // replaceAll :: String -> String -> String -> String
 var replaceAll = function(str, find, replace) {
