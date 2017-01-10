@@ -1,6 +1,8 @@
 <%
 // docs :: [String]
-var docs = public.pages.docs._contents
+
+var docs = public.pages.guides._data.guides;
+
 // replaceAll :: String -> String -> String -> String
 var replaceAll = function(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);

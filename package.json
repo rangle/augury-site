@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "custom-install": "cd src && mkdir -p vendors && cd vendors && git clone --branch v1.2.1 git@github.com:google/material-design-lite.git",
-    "start": "harp server src",
+    "start": "node utils/pre-build && harp server src",
     "deploy:staging": "firebase deploy --project staging --token $FIREBASE_STAGING_TOKEN",
     "deploy:production": "firebase deploy --project production --token $FIREBASE_PRODUCTION_TOKEN",
     "serve:staging": "http-server www/",
-    "compile": "harp compile ./src www && node utils/dependencies.js",
+    "compile": "node utils/pre-build && harp compile ./src www && node utils/harp.dependencies.js && node utils/post-build",
     "test": "echo true"
   },
   "repository": {
@@ -26,8 +26,15 @@
   "devDependencies": {
     "chalk": "^1.1.3",
     "cpx": "^1.5.0",
+    "cross-spawn": "^5.0.1",
+    "del": "^2.2.2",
+    "firebase-tools": "3.2.0",
+    "fs-extra": "^1.0.0",
+    "glob": "^7.1.1",
     "harp": "0.23.0",
     "http-server": "^0.9.0",
-    "firebase-tools": "3.2.0"
+    "lodash": "^4.17.2",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.5.4"
   }
 }
