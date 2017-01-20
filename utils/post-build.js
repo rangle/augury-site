@@ -34,4 +34,5 @@ folderCopy({
   'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/form-new-user/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/input-output-app/images/**': 'www/pages/guides/images',
+  'src/pages/docs/guide/routes/images/**': 'www/pages/guides/images',
 });
