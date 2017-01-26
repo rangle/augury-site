@@ -1,34 +1,46 @@
 # Prerequisites
-```
-- Node 6
+
+* Node 6
+* NPM
+
+Make sure you have the latest npm installed.
+
+```bash
+npm install npm@latest -g
 ```
 
 # Development
-```
-> npm run custom-install
-> npm start
+
+```bash
+npm install
+npm run custom-install
+npm start
 
 ```
-This will install material-design-lite into your source folder, this dependency is needed to create a clean build.
-Managing it from the node_modules folder is not possible, since harp does not parse that folder.
+This will install material-design-lite into your source folder, this dependency is needed to create a clean build. Managing it from the node_modules folder is not possible, since harp does not parse that folder.
 
-```
-> npm start
+```bash
+npm start
 ```
 
 # Production
 
-```
-> npm run compile # Will output a www/ folder
-> npm run serve:staging # Test production output
-> npm run deploy:staging/production
+Before you push to production, make sure to test the build from staging area. To do this, perform a production build as shown below. The compiled code will be placed under the wwww folder.
+
+```bash
+npm run compile
+npm run serve:staging
 ```
 
+Once you've tested the production build in staging, you may push deploy to production with the following command.
+
+```bash
+npm run deploy:staging/production
+```
 
 # Deployment flow
-- Always open pull requests to the staging branch (PR's to the master branch will be denied)
-    - All PR's will be verified and tested on staging once accepted.
-- Master releases are done if staging changes are accepted by Augury team members
-- All releases will be versioned.
 
-
+* Always open pull requests to the staging branch (PR's to the master branch will be denied)
+    * All PR's will be verified and tested on staging once accepted.
+* Master releases are done if staging changes are accepted by Augury team members
+* All releases will be versioned.
