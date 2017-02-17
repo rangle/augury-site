@@ -32,9 +32,8 @@ folderCopy({
   'www/examples/kitchen-sink-demo/app': 'www/demo',
   'src/pages/docs/guide/augury/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images',
-  'src/pages/docs/guide/form-new-user/images/**': 'www/pages/guides/images',
+  'src/pages/docs/guide/dependency-injection/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/input-output-app/images/**': 'www/pages/guides/images',
-  'src/pages/docs/guide/routes/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/routes/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/module-list/images/**': 'www/pages/guides/images'
 });
