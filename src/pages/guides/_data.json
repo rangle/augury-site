@@ -3,7 +3,7 @@
   "guides": [
     "1-augury.html",
     "2-io-demo.html",
-    "3-simple-form-demo.html",
+    "3-dependency-injection.html",
     "4-routes.html",
     "5-module-list.html",
     "6-architecture.html",
