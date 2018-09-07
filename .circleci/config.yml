@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10-browsers
+    working_directory: ~/tmp
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Custom install step
+          command: npm run custom-install
+      - run:
+          name: Compile site
+          command: npm run compile
+      - persist_to_workspace:
+          root: ~/tmp/www
+          paths:
+            - .
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/tmp
+    steps:
+      - attach_workspace:
+          at: ~/tmp/www
+      - run:
+          name: Installing dependencies.
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync ~/tmp/www/ s3://augury.rangle.io --delete
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: production
