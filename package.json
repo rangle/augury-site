@@ -6,8 +6,6 @@
   "scripts": {
     "custom-install": "cd src && mkdir -p vendors && cd vendors && git clone --branch v1.2.1 git@github.com:google/material-design-lite.git",
     "start": "node utils/pre-build && harp server src",
-    "deploy:staging": "firebase deploy --project staging --token $FIREBASE_STAGING_TOKEN",
-    "deploy:production": "firebase deploy --project production --token $FIREBASE_PRODUCTION_TOKEN",
     "serve:staging": "http-server www/",
     "compile": "node utils/pre-build && harp compile ./src www && node utils/harp.dependencies.js && node utils/post-build",
     "test": "echo true"

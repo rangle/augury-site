@@ -4,7 +4,7 @@
 # Augury website build script, run this script to build and test site locally.
 
 # Remove compiled web folder, "www"
-rm -rf www
+rm -rf ./www
 
 # Delete docs folder, new docs will be fetch from augury-documentation Git repo.
 rm -rf ./src/pages/docs

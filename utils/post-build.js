@@ -9,6 +9,7 @@ const dependencies = [
     repository: "git@github.com:rangle/augury-examples.git",
     branch: 'master',
     ignore: [
+      '.git',
       'LICENSE',
       'README.md',
       '/**/src/',
