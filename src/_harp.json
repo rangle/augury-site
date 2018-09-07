@@ -7,11 +7,11 @@
    },
    "global_nav_pages": [{
       "text": "Guides",
-      "href": "/pages/guides/"
+      "href": "/pages/guides/index.html"
       },
       {
       "text": "Resources",
-      "href": "/pages/resources/"
+      "href": "/pages/resources/index.html"
       },
       {
         "text": "Change Log",
