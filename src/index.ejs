@@ -4,42 +4,54 @@
       name: 'Augury',
       logoWithText: 'images/angular-logo-with-text.svg',
       CTA: {
-        text: 'Install',
+        text: 'Install on Chrome',
         url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+      },
+      FF: {
+        text: 'Install on Firefox',
+        url: 'https://addons.mozilla.org/en-US/firefox/addon/angular-augury/'
       },
       pages: global_nav_pages,
       homeHref: '/'
     }) %>
 
-    <main class="mdl-layout__content">
-      <header class="hero-background">
+  <main class="mdl-layout__content">
+    <header class="hero-background">
 
-        <!-- Hero -->
-        <%- partial("pages/_partials/hero", {
+      <!-- Hero -->
+      <%- partial("pages/_partials/hero", {
             name: 'Angular Augury',
             logo: {
               src: 'images/augury-logo.svg',
               alt: 'Augury Logo'
             },
-            tagline: 'A Google Chrome Dev Tools extension for debugging Angular applications.',
+            tagline: 'A Chrome and Firefox Dev Tools extension for debugging Angular applications.',
             CTA: {
-              text: 'Install',
+              text: 'Install on Chrome',
               href: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+            },
+            FF: {
+              text: 'Install on Firefox',
+              href: 'https://addons.mozilla.org/en-US/firefox/addon/angular-augury/'
             }
           }) %>
 
-      </header>
+    </header>
 
-      <!-- Add as many features as needed -->
-      <%- partial("pages/_partials/features", {
+    <!-- Add as many features as needed -->
+    <%- partial("pages/_partials/features", {
         CTA: {
-          text: 'Install',
+          text: 'Install on Chrome',
           url: 'https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd'
+        },
+        FF: {
+          text: 'Install on Firefox',
+          url: 'https://addons.mozilla.org/en-US/firefox/addon/angular-augury/'
         }
       }) %>
 
-        <%- partial("pages/_partials/footer", {
+    <%- partial("pages/_partials/footer", {
         footerImg: 'images/angular-logo.svg'
       }) %>
-    </main>
+  </main>
 </div>
