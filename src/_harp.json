@@ -1,22 +1,28 @@
 {
- "globals": {
-   "name"  : "Augury",
-   "global_cta" : {
-     "href" : "https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd",
-     "text" : "Install"
-   },
-   "global_nav_pages": [{
-      "text": "Guides",
-      "href": "/pages/guides/index.html"
+  "globals": {
+    "name": "Augury",
+    "global_cta": {
+      "href": "https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd",
+      "text": "Install on Chrome"
+    },
+    "global_ff": {
+      "href": "https://addons.mozilla.org/en-US/firefox/addon/angular-augury/",
+      "text": "Install on Firefox"
+    },
+    "global_nav_pages": [
+      {
+        "text": "Guides",
+        "href": "/pages/guides/index.html"
       },
       {
-      "text": "Resources",
-      "href": "/pages/resources/index.html"
+        "text": "Resources",
+        "href": "/pages/resources/index.html"
       },
       {
         "text": "Change Log",
         "href": "https://github.com/rangle/augury/blob/dev/CHANGELOG.md"
-    }],
+      }
+    ],
     "resources": [
       {
         "title": "Adventures in Angular Episode:105 Augury with Igor Kamenetsky",
