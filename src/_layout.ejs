@@ -1,52 +1,90 @@
 <!doctype html>
 <html lang="">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="favicon.ico" rel="shortcut icon" type="image/ico">
-    <title>Angular Augury</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="favicon.ico" rel="shortcut icon" type="image/ico">
+  <title>Angular Augury</title>
 
-    <!-- Material Design icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="vendors/material-design-lite/material.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+  <!-- Material Design icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="vendors/material-design-lite/material.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41067508-15"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-41067508-15');
+  </script>
 </head>
+
 <body class="mdl-demo mdl-base">
-<%- yield %>
-<script src="tools/prism.js"></script>
-<script src="vendors/material-design-lite/material.min.js"></script>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-8594346-15', 'auto');
-    ga('send', 'pageview');
-</script>
-<script>
-    var trackOutboundLinkNav = function(url) {
-      ga('send', 'event', 'acquisition', 'install', 'nav', {
-        'transport': 'beacon',
-        'hitCallback': function(){document.location = url;}
+  <%- yield %>
+  <script src="tools/prism.js"></script>
+  <script src="vendors/material-design-lite/material.min.js"></script>
+  <script>
+    var trackOutboundLinkNavChrome = function (url) {
+      gtag('event', 'install', {
+        'event_category': 'acquisition',
+        'event_label': 'nav',
+        'transport_type': 'beacon',
+        'event_callback': function () { document.location = url; }
       });
     }
 
-    var trackOutboundLinkHero = function(url) {
-      ga('send', 'event', 'acquisition', 'install', 'hero', {
-        'transport': 'beacon',
-        'hitCallback': function(){document.location = url;}
+    var trackOutboundLinkNavFF = function (url) {
+      gtag('event', 'install', {
+        'event_category': 'acquisition',
+        'event_label': 'nav_ff',
+        'transport_type': 'beacon',
+        'event_callback': function () { document.location = url; }
       });
     }
 
-    var trackOutboundLinkCta = function(url) {
-      ga('send', 'event', 'acquisition', 'install', 'cta', {
-        'transport': 'beacon',
-        'hitCallback': function(){document.location = url;}
+    var trackOutboundLinkHeroChrome = function (url) {
+      gtag('event', 'install', {
+        'event_category': 'acquisition',
+        'event_label': 'hero',
+        'transport_type': 'beacon',
+        'event_callback': function () { document.location = url; }
       });
     }
-</script>
+
+    var trackOutboundLinkHeroFF = function (url) {
+      gtag('event', 'install', {
+        'event_category': 'acquisition',
+        'event_label': 'hero_ff',
+        'transport_type': 'beacon',
+        'event_callback': function () { document.location = url; }
+      });
+    }
+
+    var trackOutboundLinkCta = function (url) {
+      gtag('event', 'install', {
+        'event_category': 'acquisition',
+        'event_label': 'cta',
+        'transport_type': 'beacon',
+        'event_callback': function () { document.location = url; }
+      });
+    }
+
+    var trackOutboundLinkCtaFF = function (url) {
+      gtag('event', 'install', {
+        'event_category': 'acquisition',
+        'event_label': 'cta_ff',
+        'transport_type': 'beacon',
+        'event_callback': function () { document.location = url; }
+      });
+    }
+  </script>
 </body>
+
 </html>
