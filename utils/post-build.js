@@ -8,7 +8,7 @@ const dependencies = [
     name: 'augury-examples',
     repository: "git@github.com:rangle/augury-examples.git",
     branch: 'master',
-    buildScripts: ['yarn install', 'yarn build'],
+    buildScripts: ['yarn install', 'yarn build --base-href ./'],
     distFolder: 'dist/augury-examples',
     ignore: [
       '.git',
