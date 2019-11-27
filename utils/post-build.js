@@ -8,6 +8,8 @@ const dependencies = [
     name: 'augury-examples',
     repository: "git@github.com:rangle/augury-examples.git",
     branch: 'master',
+    buildScripts: ['yarn install', 'yarn build'],
+    distFolder: 'dist/augury-examples',
     ignore: [
       '.git',
       'LICENSE',
@@ -18,7 +20,6 @@ const dependencies = [
       '/**/.editorconfig',
       '/**/package.json',
       '/**/README.md',
-      '/**/angular-cli.json',
       '/**/tsconfig.json',
       '/**/webpack.config.js',
       '/**/tslint.json',
@@ -30,7 +31,6 @@ const dependencies = [
 dependencies.forEach(build);
 
 folderCopy({
-  'www/examples/kitchen-sink-demo/app': 'www/demo',
   'src/pages/docs/guide/augury/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/architecture/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/dependency-injection/images/**': 'www/pages/guides/images',
@@ -38,4 +38,3 @@ folderCopy({
   'src/pages/docs/guide/routes/images/**': 'www/pages/guides/images',
   'src/pages/docs/guide/module-list/images/**': 'www/pages/guides/images'
 });
-
