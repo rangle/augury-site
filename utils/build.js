@@ -1,11 +1,11 @@
-const chalk  = require('chalk');
-const fs     = require('fs');
-const glob   = require('glob');
+const chalk = require('chalk');
+const fs = require('fs');
+const glob = require('glob');
 const lodash = require('lodash');
-const ncp    = require('ncp').ncp;
-const path   = require('path');
+const ncp = require('ncp').ncp;
+const path = require('path');
 const rimraf = require('rimraf');
-const spawn  = require('cross-spawn');
+const spawn = require('cross-spawn');
 
 const TMP_FOLDER = path.join(__dirname, '..', '.tmp');
 ncp.limit = 20;
@@ -14,17 +14,24 @@ module.exports = function build(dependency) {
   const ignoredFiles = dependency.ignore.map(i => path.join(dependency.destination, i));
   const existingFiles = [path.join(TMP_FOLDER, dependency.name)];
 
-  if (! lodash.isEmpty(dependency)) {
+  if (!lodash.isEmpty(dependency)) {
     chain(
       deleteFiles(existingFiles),
       cloneRepo,
-      copyFiles(path.join(TMP_FOLDER, dependency.name)),
+      dependency.buildScripts ? runBuildScripts() : noop(),
+      copyFiles(
+        dependency.distFolder
+          ? path.join(TMP_FOLDER, dependency.name, dependency.distFolder)
+          : path.join(TMP_FOLDER, dependency.name)
+      ),
       deleteFiles(ignoredFiles, { glob: true })
     )(dependency);
   } else {
     return handleError('No dependency found');
   }
 };
+
+const noop = () => dependency => Promise.resolve(dependency);
 
 /*
  * This method is a promise wrapper to chain promises
@@ -34,17 +41,16 @@ module.exports = function build(dependency) {
  */
 function chain(...promises) {
   if (promises.length === 0) {
-    return () => {
-    };
+    return () => {};
   }
 
   const currentPromise = promises.shift();
 
-  return (dependency) => {
+  return dependency => {
     return currentPromise(dependency)
       .then(() => chain(...promises)(dependency))
       .catch(handleError);
-  }
+  };
 }
 
 /*
@@ -55,25 +61,15 @@ function cloneRepo(dependency) {
   const { name, repository, branch } = dependency;
 
   return new Promise((resolve, reject) => {
-    const child = spawn('git',
-      [
-        'clone',
-        '-b',
-        branch,
-        repository,
-        `${TMP_FOLDER}/${name}`
-      ],
-      { stdio: 'inherit' }
-    );
+    const child = spawn('git', ['clone', '-b', branch, repository, `${TMP_FOLDER}/${name}`], { stdio: 'inherit' });
 
-    child.on('error', (err) => {
+    child.on('error', err => {
       reject(err);
     });
 
     child.on('close', () => {
       resolve(dependency);
     });
-
   });
 }
 
@@ -82,29 +78,53 @@ function cloneRepo(dependency) {
  * the moving of the dependency files
  */
 function copyFiles(filePath) {
-  return (dependency) => {
+  return dependency => {
     const { name, destination } = dependency;
     console.log('Copying files for dependency ' + name);
 
     return new Promise((resolve, reject) => {
-      ncp(filePath, destination, { clobber: true }, function (err) {
+      ncp(filePath, destination, { clobber: true }, function(err) {
         if (err) {
           return reject(err);
         }
         return resolve(dependency);
       });
     });
-  }
+  };
+}
+
+function runBuildScripts() {
+  return dependency => {
+    const { buildScripts, name } = dependency;
+    console.log('Preparing to run following build scripts: ', buildScripts.join(', '));
+
+    const runScript = script => () =>
+      new Promise((resolve, reject) => {
+        console.log('Running build script: ', script);
+        const child = spawn(script.split(' ')[0], [...script.split(' ').slice(1)], {
+          stdio: 'inherit',
+          cwd: `${TMP_FOLDER}/${name}`
+        });
+
+        child.on('error', err => {
+          reject(err);
+        });
+
+        child.on('close', () => {
+          resolve(script);
+        });
+      });
+
+    return buildScripts.map(runScript).reduce((promise, next) => promise.then(() => next()), Promise.resolve());
+  };
 }
 
 function deleteFiles(files, options) {
-
-  return (dependency) => {
-
+  return dependency => {
     // Private helper
-    const deleteFile = (file) => {
+    const deleteFile = file => {
       return new Promise((resolve, reject) => {
-        return fs.exists(file, (exists) => {
+        return fs.exists(file, exists => {
           if (!exists) {
             resolve(dependency);
           } else {
@@ -120,9 +140,9 @@ function deleteFiles(files, options) {
     };
 
     // Private helper
-    const globFile = (file) => {
+    const globFile = file => {
       return new Promise((resolve, reject) => {
-        return glob(file, {}, function (err, results) {
+        return glob(file, {}, function(err, results) {
           if (err) {
             reject(err);
           }
@@ -131,22 +151,20 @@ function deleteFiles(files, options) {
       });
     };
 
-    const {name} = dependency;
+    const { name } = dependency;
     console.log(chalk.green('Cleaning up ' + name));
-    console.log(files)
+    console.log(files);
 
     if (options && options.glob) {
       const promises = files.map(globFile);
-      return Promise.all(promises).then((results) => {
+      return Promise.all(promises).then(results => {
         let paths = lodash.flattenDeep(results);
-        return Promise.all(
-          paths.map(deleteFile)
-        );
+        return Promise.all(paths.map(deleteFile));
       });
     }
 
     return Promise.all(files.map(deleteFile));
-  }
+  };
 }
 
 function handleError(err) {
