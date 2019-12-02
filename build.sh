@@ -6,9 +6,6 @@
 # Remove compiled web folder, "www"
 rm -rf ./www
 
-# Delete docs folder, new docs will be fetch from augury-documentation Git repo.
-rm -rf ./src/pages/docs
-
 # The build will copy all the demo application from augury-examples Git repo.
 npm run compile
 
@@ -16,4 +13,3 @@ echo -e "\n\n*** ATTENTION ***\nOnce you have tested the production build, deplo
 
 # Run webserver to test build locally.
 npm run serve:staging
-
