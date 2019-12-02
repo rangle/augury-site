@@ -76,7 +76,7 @@ We are using GitHub Issues for our public bugs. We will follow up with any issue
 
 If you do find a new issue, the best way to get a bug fixed is to provide a test case with either one of the example apps bundled in the repo, or by making your own Angular application illustrating the reduced use case. You can also include code snippets, though only if they illustrate the issue in a concise way. Do not forget to include the version of Angular app you are using!
 
-*At the moment, we offer limited backwards compatibility until Angular stabilizes. Please check README for the [version](https://github.com/rangle/augury/blob/dev/README.md#supported-version) Augury currently supports.
+*At the moment, we offer limited backwards compatibility until Angular stabilizes. Please check README for the [version](https://github.com/rangle/augury/blob/master/README.md#supported-version) Augury currently supports.
 
    ​
 
@@ -86,8 +86,8 @@ If you do find a new issue, the best way to get a bug fixed is to provide a test
 
 [Slack](https://augury-slack.herokuapp.com/)
 
-Okay, [manuals](https://github.com/rangle/augury/blob/dev/README.md) and [textbooks](https://github.com/rangle/augury/wiki) are great and all but they make for poor conversation. Feel free to [join us on Slack](https://augury-slack.herokuapp.com/)! Whether you are looking for answers to technical questions, suggestion of a new feature, or just want to share funny pictures, there is a channel for that. You can also ask us questions in private. We can not wait to hear from you.
+Okay, [manuals](https://github.com/rangle/augury/blob/master/README.md) and [textbooks](https://github.com/rangle/augury/wiki) are great and all but they make for poor conversation. Feel free to [join us on Slack](https://augury-slack.herokuapp.com/)! Whether you are looking for answers to technical questions, suggestion of a new feature, or just want to share funny pictures, there is a channel for that. You can also ask us questions in private. We can not wait to hear from you.
 
 ## License
 
-[MIT](https://github.com/rangle/augury/blob/dev/LICENSE)
+[MIT](https://github.com/rangle/augury/blob/master/LICENSE)
