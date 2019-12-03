@@ -63,4 +63,3 @@ node_modules/
 microsite-ui/
 npm-debug.log
 .tmp
-src/pages/docs
